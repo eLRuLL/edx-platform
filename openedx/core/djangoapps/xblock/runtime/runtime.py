@@ -10,7 +10,7 @@ from completion.models import BlockCompletion
 from completion.services import CompletionService
 from django.contrib.auth import get_user_model
 from django.core.exceptions import PermissionDenied
-from django.utils.lru_cache import lru_cache
+from functools import lru_cache
 from eventtracking import tracker
 from six.moves.urllib.parse import urljoin  # pylint: disable=import-error
 from web_fragments.fragment import Fragment

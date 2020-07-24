@@ -19,7 +19,6 @@ from django.core.cache import cache
 from django.core.validators import RegexValidator
 from django.db import IntegrityError, models, transaction
 from django.dispatch import receiver
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from edx_django_utils.cache import RequestCache
@@ -33,7 +32,6 @@ CREDIT_PROVIDER_ID_REGEX = u"[a-z,A-Z,0-9,\\-]+"
 log = logging.getLogger(__name__)
 
 
-@python_2_unicode_compatible
 class CreditProvider(TimeStampedModel):
     """
     This model represents an institution that can grant credit for a course.
@@ -216,7 +214,6 @@ def invalidate_provider_cache(sender, **kwargs):  # pylint: disable=unused-argum
     cache.delete(CreditProvider.CREDIT_PROVIDERS_CACHE_KEY)
 
 
-@python_2_unicode_compatible
 class CreditCourse(models.Model):
     """
     Model for tracking a credit course.
@@ -279,7 +276,6 @@ def invalidate_credit_courses_cache(sender, **kwargs):   # pylint: disable=unuse
     cache.delete(CreditCourse.CREDIT_COURSES_CACHE_KEY)
 
 
-@python_2_unicode_compatible
 class CreditRequirement(TimeStampedModel):
     """
     This model represents a credit requirement.
@@ -548,7 +544,6 @@ def default_deadline_for_credit_eligibility():
     )
 
 
-@python_2_unicode_compatible
 class CreditEligibility(TimeStampedModel):
     """
     A record of a user's eligibility for credit for a specific course.
@@ -655,7 +650,6 @@ class CreditEligibility(TimeStampedModel):
         )
 
 
-@python_2_unicode_compatible
 class CreditRequest(TimeStampedModel):
     """
     A request for credit from a particular credit provider.
@@ -782,7 +776,6 @@ class CreditRequest(TimeStampedModel):
         )
 
 
-@python_2_unicode_compatible
 class CreditConfig(ConfigurationModel):
     """
     Manage credit configuration

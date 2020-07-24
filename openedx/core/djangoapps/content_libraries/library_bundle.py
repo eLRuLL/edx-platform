@@ -4,7 +4,7 @@ Helper code for working with Blockstore bundles that contain OLX
 
 import logging
 
-from django.utils.lru_cache import lru_cache
+from functools import lru_cache
 from opaque_keys.edx.locator import BundleDefinitionLocator, LibraryUsageLocatorV2
 from xblock.core import XBlock
 from xblock.plugin import PluginMissingError

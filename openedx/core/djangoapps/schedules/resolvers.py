@@ -7,7 +7,7 @@ from itertools import groupby
 import attr
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.templatetags.static import static
 from django.db.models import F, Q
 from django.urls import reverse
 from edx_ace.recipient import Recipient

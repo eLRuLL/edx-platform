@@ -15,7 +15,6 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils.translation import ugettext as _u
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 
 from model_utils.models import TimeStampedModel
 from six.moves.urllib.parse import urlunsplit  # pylint: disable=import-error
@@ -26,7 +25,6 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 log = logging.getLogger(__name__)
 
 
-@python_2_unicode_compatible
 class ApiAccessRequest(TimeStampedModel):
     """
     Model to track API access for a user.
@@ -132,7 +130,6 @@ class ApiAccessRequest(TimeStampedModel):
         return u'ApiAccessRequest {website} [{status}]'.format(website=self.website, status=self.status)
 
 
-@python_2_unicode_compatible
 class ApiAccessConfig(ConfigurationModel):
     """
     Configuration for API management.
@@ -224,7 +221,6 @@ def _send_decision_email(instance):
         log.exception(u'Error sending API user notification email for request [%s].', instance.id)
 
 
-@python_2_unicode_compatible
 class Catalog(models.Model):
     """
     A (non-Django-managed) model for Catalogs in the course discovery service.

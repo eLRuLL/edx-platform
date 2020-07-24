@@ -71,7 +71,6 @@ from django.core import signing
 from django.http import HttpResponse
 from django.utils.crypto import get_random_string
 from django.utils.deprecation import MiddlewareMixin
-from django.utils.encoding import python_2_unicode_compatible
 
 from six import text_type  # pylint: disable=ungrouped-imports
 
@@ -89,7 +88,6 @@ class SafeCookieError(Exception):
         log.error(error_message)
 
 
-@python_2_unicode_compatible
 class SafeCookieData(object):
     """
     Cookie data that cryptographically binds and timestamps the user

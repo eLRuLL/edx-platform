@@ -7,10 +7,8 @@ import six
 
 from config_models.models import ConfigurationModel
 from django.db.models.fields import PositiveIntegerField, TextField
-from django.utils.encoding import python_2_unicode_compatible
 
 
-@python_2_unicode_compatible
 class CourseAssetCacheTtlConfig(ConfigurationModel):
     """
     Configuration for the TTL of course assets.
@@ -38,7 +36,6 @@ class CourseAssetCacheTtlConfig(ConfigurationModel):
         return six.text_type(repr(self))
 
 
-@python_2_unicode_compatible
 class CdnUserAgentsConfig(ConfigurationModel):
     """
     Configuration for the user agents we expect to see from CDNs.

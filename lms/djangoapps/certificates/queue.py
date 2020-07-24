@@ -11,7 +11,6 @@ import six
 from django.conf import settings
 from django.test.client import RequestFactory
 from django.urls import reverse
-from django.utils.encoding import python_2_unicode_compatible
 from lxml.etree import ParserError, XMLSyntaxError
 from requests.auth import HTTPBasicAuth
 
@@ -32,7 +31,6 @@ from xmodule.modulestore.django import modulestore
 LOGGER = logging.getLogger(__name__)
 
 
-@python_2_unicode_compatible
 class XQueueAddToQueueError(Exception):
     """An error occurred when adding a certificate task to the queue. """
 

@@ -12,7 +12,7 @@ from django.conf import settings
 from django.contrib.staticfiles.finders import find
 from django.contrib.staticfiles.storage import CachedFilesMixin, StaticFilesStorage
 from django.utils._os import safe_join
-from django.utils.six.moves.urllib.parse import (  # pylint: disable=no-name-in-module, import-error
+from six.moves.urllib.parse import (  # pylint: disable=no-name-in-module, import-error
     unquote,
     urldefrag,
     urlsplit

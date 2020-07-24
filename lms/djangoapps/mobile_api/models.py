@@ -5,7 +5,6 @@ ConfigurationModel for the mobile_api djangoapp.
 
 from config_models.models import ConfigurationModel
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 from . import utils
 from .mobile_platform import PLATFORM_CLASSES
@@ -36,7 +35,6 @@ class MobileApiConfig(ConfigurationModel):
         return [profile.strip() for profile in cls.current().video_profiles.split(",") if profile]
 
 
-@python_2_unicode_compatible
 class AppVersionConfig(models.Model):
     """
     Configuration for mobile app versions available.

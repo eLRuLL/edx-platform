@@ -53,7 +53,6 @@ import pyparsing
 import six
 from calc.preview import latex_preview
 from chem import chemcalc
-from django.utils.encoding import python_2_unicode_compatible
 from lxml import etree
 from six import text_type
 
@@ -73,7 +72,6 @@ log = logging.getLogger(__name__)
 registry = TagRegistry()  # pylint: disable=invalid-name
 
 
-@python_2_unicode_compatible
 class Status(object):
     """
     Problem status

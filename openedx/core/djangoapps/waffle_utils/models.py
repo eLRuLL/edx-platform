@@ -3,7 +3,6 @@ Models for configuring waffle utils.
 """
 
 from django.db.models import CharField
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from model_utils import Choices
 from opaque_keys.edx.django.models import CourseKeyField
@@ -13,7 +12,6 @@ from config_models.models import ConfigurationModel
 from openedx.core.lib.cache_utils import request_cached
 
 
-@python_2_unicode_compatible
 class WaffleFlagCourseOverrideModel(ConfigurationModel):
     """
     Used to force a waffle flag on or off for a course.

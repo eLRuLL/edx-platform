@@ -5,10 +5,11 @@ neo4j, a graph database.
 
 
 import logging
+import six
 
 from celery import task
 from django.conf import settings
-from django.utils import six, timezone
+from django.utils import timezone
 from edx_django_utils.cache import RequestCache
 from opaque_keys.edx.keys import CourseKey
 from py2neo import Graph, Node, Relationship, authenticate, NodeSelector

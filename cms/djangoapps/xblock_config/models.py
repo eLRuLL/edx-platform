@@ -9,7 +9,6 @@ Includes:
 import six
 from config_models.models import ConfigurationModel
 from django.db.models import TextField
-from django.utils.encoding import python_2_unicode_compatible
 from opaque_keys.edx.django.models import CourseKeyField
 
 from openedx.core.lib.cache_utils import request_cached
@@ -37,7 +36,6 @@ class StudioConfig(ConfigurationModel):
 
 # TODO: Move CourseEditLTIFieldsEnabledFlag to LTI XBlock as a part of EDUCATOR-121
 # reference: https://openedx.atlassian.net/browse/EDUCATOR-121
-@python_2_unicode_compatible
 class CourseEditLTIFieldsEnabledFlag(ConfigurationModel):
     """
     Enables the editing of "request username" and "request email" fields
